@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-nav">
         <div class="navbar-container container-fluid">
             <div class="logo align-items-center">
                 <a class="" href="a">
