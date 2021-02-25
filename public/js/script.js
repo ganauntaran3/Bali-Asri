@@ -11,3 +11,7 @@ function myFunction() {
       x.className = "topnav";
     }
   }
+
+// style after scrolling
+
+
