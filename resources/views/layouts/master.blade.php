@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Vendor CSS Files -->
-  <link href="https://127.0.0.1:8000/vendor/aos/aos.css" rel="stylesheet">
-  <link href="https://127.0.0.1:8000/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://127.0.0.1:8000/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://127.0.0.1:8000/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://127.0.0.1:8000/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="https://127.0.0.1:8000/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href={{ asset('css/style.css') }}>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +16,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <header id="header" class="fixed-top {{ Request::is('baliasri/contact', 'baliasri/about') ? 'no-head' : '' }}">
+    <header id="header" class="fixed-top {{ Request::is('baliasri/contact', 'baliasri/about', 'baliasri/service') ? 'no-head' : '' }}">
         <div class="container d-flex align-items-center justify-content-between">
           <h1 class="logo"><a href="index.html">Bali Asri</a></h1>
           {{--  <!-- Uncomment below if you prefer to use an image logo -->  --}}
@@ -30,7 +25,7 @@
             <ul>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/home') ? 'active' : '' }}" href="{{ url('baliasri/home') }}">Home</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/products') ? 'active' : '' }}" href="{{ url('baliasri/product') }}">Products</a></li>
-              <li><a class="nav-link scrollto {{ Request::is('baliasri/service') ? 'active' : '' }}" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto {{ Request::is('baliasri/service') ? 'active' : '' }}" href="{{ url('baliasri/service') }}">Services</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/about') ? 'active' : '' }}" href="{{ url('baliasri/about') }}">About Us</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/contact') ? 'active' : '' }}" href="{{ url('baliasri/contact') }}">Contact Us</a></li>
             </ul>
@@ -164,5 +159,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+
 
 </html>
