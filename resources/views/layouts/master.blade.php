@@ -34,7 +34,7 @@
               <li><a class="nav-link scrollto {{ Request::is('baliasri/about') ? 'active' : '' }}" href="{{ url('baliasri/about') }}">About Us</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/contact') ? 'active' : '' }}" href="{{ url('baliasri/contact') }}">Contact Us</a></li>
             </ul>
-    <i class="fas fa-bars mobile-nav-toggle"></i>
+                <i class="fas fa-bars mobile-nav-toggle"></i>
           </nav>
           <!-- .navbar -->
 
@@ -164,12 +164,5 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-<script src="https://127.0.0.1:8000/vendor/aos/aos.js"></script>
-<script src="https://127.0.0.1:8000/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://127.0.0.1:8000/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="https://127.0.0.1:8000/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="https://127.0.0.1:8000/vendor/php-email-form/validate.js"></script>
-<script src="https://127.0.0.1:8000/vendor/purecounter/purecounter.js"></script>
-<script src="https://127.0.0.1:8000/vendor/swiper/swiper-bundle.min.js"></script>
 
 </html>

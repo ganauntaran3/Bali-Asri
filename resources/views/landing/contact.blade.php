@@ -9,7 +9,6 @@
 
     <div class="section-title">
       <h2>Get in touch with us</h2>
-
     </div>
 
     <div class="row">

@@ -4,32 +4,21 @@
     About Us
 @endsection
 
-@section('banner')
-<div class="container-fluid" data-aos="fade-up">
-    <div class="row justify-content-center">
-      <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-        <h1>Welcome to Bali Asri</h1>
-        <h2>Find your taste of fashion and build your style here</h2>
-        <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
-      </div>
-      <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-        <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-      </div>
-    </div>
-  </div>
-@endsection
-
 @section('body')
 <section id="about" class="about">
     <div class="container">
 
+        <div class="section-title">
+            <h2>About Bali Asri</h2>
+          </div>
+
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-          <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          <img src="{{ asset('img/about.jpg') }}" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-          <h3>Voluptatem dignissimos provident quasi corporis</h3>
-          <p class="font-italic">
+          <h3>History of Bali Asri</h3>
+          <p class="font-italic mt-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.
           </p>
