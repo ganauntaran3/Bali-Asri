@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,9 @@ Route::get('/', function () {
 });
 
     Route::prefix('baliasri')->group(function () {
+        route::get('/home', [HomeController::class, 'index']);
+        route::get('/product', [ProductController::class, 'index']);
+        route::get('/service', [ServiceController::class, 'index']);
         route::get('/about', [AboutController::class, 'index']);
         route::get('/contact', [ContactController::class, 'index']);
-        route::get('/home', [HomeController::class, 'index']);
-        route::get('/service', [ServiceController::class, 'index']);
     });

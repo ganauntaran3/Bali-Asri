@@ -15,7 +15,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <header id="header" class="fixed-top {{ Request::is('baliasri/contact', 'baliasri/about', 'baliasri/service') ? 'no-head' : '' }}">
+    <header id="header" class="fixed-top {{ Request::is('baliasri/contact', 'baliasri/about', 'baliasri/service', 'baliasri/product') ? 'no-head' : '' }}">
         <div class="container d-flex align-items-center justify-content-between">
           <h1 class="logo"><a href="index.html">Bali Asri</a></h1>
           {{--  <!-- Uncomment below if you prefer to use an image logo -->  --}}
@@ -158,9 +158,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b183257d5323b9dd71253016182dc42b21980334
 </html>
