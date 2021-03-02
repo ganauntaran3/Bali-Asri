@@ -8,6 +8,8 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +32,8 @@ Route::get('/', function () {
         route::get('/service', [ServiceController::class, 'index']);
         route::get('/about', [AboutController::class, 'index']);
         route::get('/contact', [ContactController::class, 'index']);
+    });
+
+    Route::prefix('admin')->group(function () {
+        route::get('/index', [AdminController::class, 'index']);
     });

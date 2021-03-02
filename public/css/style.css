@@ -832,6 +832,7 @@ section {
   .services .icon-box h4 a {
     color: #2c4964;
     transition: ease-in-out 0.3s;
+    text-decoration: none;
   }
 
   .services .icon-box p {
@@ -934,9 +935,9 @@ section {
     position: relative;
   }
 
-  #footer .footer-top .footer-contact {
-    /* margin-bottom: 30px; */
-  }
+  /* #footer .footer-top .footer-contact {
+    margin-bottom: 30px;
+  } */
 
   #footer .footer-top .footer-contact h3 {
     font-size: 28px;
@@ -966,9 +967,6 @@ section {
     padding-bottom: 12px;
   }
 
-  #footer .footer-top .footer-links {
-    /* margin-bottom: 30px; */
-  }
 
   #footer .footer-top .footer-links ul {
     list-style: none;
