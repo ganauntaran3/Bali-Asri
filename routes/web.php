@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -26,6 +27,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
     Route::prefix('baliasri')->group(function () {
         route::get('/home', [HomeController::class, 'index']);
         route::get('/product', [ProductController::class, 'index']);
@@ -34,6 +37,16 @@ Route::get('/', function () {
         route::get('/contact', [ContactController::class, 'index']);
     });
 
-    Route::prefix('admin')->group(function () {
-        route::get('/index', [AdminController::class, 'index']);
+    route::middleware('guest')->group(function () {
+        route::get('login', [AuthController::class, 'index'])->name('login');
+        route::post('authenticate', [AuthController::class, 'login'])->name('authenticate');
+
+
+    });
+
+
+    Route::prefix('admin')->middleware('auth')->group(function () {
+        route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+        route::get('/index', [AdminController::class, 'index'])->name('dashboard');
+        route::get('/mail', [ContactController::class, 'dashboard']);
     });
