@@ -50,6 +50,7 @@ Route::get('/', function () {
 
         route::get('/blog', [AdminController::class, 'blog']);
         route::get('/blog-create', [AdminController::class, 'createBlog']);
+        route::post('/blog-post', [AdminController::class, 'postBlog'])->name('blog.post');
         route::get('/blog-edit/{blog:id}', [AdminController::class, 'editBlog'])->name('blog.edit');
         route::get('/blog-delete/{blog:id}', [AdminController::class, 'destroyBlog'])->name('blog.delete');
 

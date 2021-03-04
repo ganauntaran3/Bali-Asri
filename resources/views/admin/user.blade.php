@@ -53,7 +53,7 @@
                                     <a href="{{ route('user.edit', $user->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Edit user">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('user.delete', $user->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Blog">
+                                    <a href="{{ route('user.delete', $user->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Blog">
                                       <i class="fas fa-trash"></i>
                                     </a>
                                   </td>

@@ -353,6 +353,12 @@
             content_css: '//www.tiny.cloud/css/codepen.min.css'
         });
     </script>
+
+    <script>
+        function hapus($data){
+            return confirm($data);
+}
+    </script>
     </body>
 
     </html>

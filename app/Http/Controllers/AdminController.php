@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mail;
 use App\Models\Blog;
 use App\Models\User;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -13,6 +14,13 @@ class AdminController extends Controller
     public function index(){
         return view('admin.dashboard');
     }
+
+
+
+
+
+
+    //Mengatur mailer
 
     public function contact(){
         $mail = Mail::get();
@@ -25,6 +33,10 @@ class AdminController extends Controller
         $mail->delete();
         return redirect()->back();
     }
+
+
+
+    //Mengatur about us
 
     public function blog(){
         $blog = Blog::get();
@@ -43,9 +55,69 @@ class AdminController extends Controller
         ]);
     }
 
+    public function postBlog(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
+        $img = $request->file('thumbnail');
+        $img_name = time(). "." .$img->getClientOriginalName();
+
+        $upDir = 'thumbnail';
+        $img->move($upDir, $img_name);
+
+        Blog::create([
+            'title' => $request->title,
+            'paragraph' => $request->content,
+            'thumbnail' => $img_name
+        ]);
+
+        return redirect('admin/blog')->with('success', 'Successfully Added New Data');
+    }
+
+    public function updateBlog(Request $request, $id){
+
+        $blog = Blog::where('id', $id)->first();
+
+        $this->validate($request, [
+            'thumbnail' => 'image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
+        if($request->hasfile('thumbnail')){
+
+            File::delete('thumbnail/'.$blog->thumbnail);
+
+            $img = $request->file('thumbnail');
+            $img_name = time(). "." .$img->getClientOriginalName();
+
+            $upDir = 'thumbnail';
+            $img->move($upDir, $img_name);
+
+            Blog::where('id', $id)->update([
+                'title' => $request->title,
+                'paragraph' => $request->content,
+                'img' => $img_name
+            ]);
+
+        }else{
+
+            Blog::where('id', $id)->update([
+                'title' => $request->title,
+                'paragraph' => $request->content,
+                'thumbnail' => $blog->thumbnail
+            ]);
+        }
+
+
+        return redirect('/view')->with('success', 'Data Updated Successfully');
+    }
 
 
 
+
+    //Mengatur administrator
     public function user(){
         $user = User::get();
         return view('admin.user', [
@@ -73,13 +145,25 @@ class AdminController extends Controller
 
     public function updateUser(User $user){
         request()->validate([
-            'name' => 'required|unique:bands,name,'. $band->id,
-            'thumbnail' => 'nullable|image|mimes:png,jpg',
-            'genres' => 'required|array'
+            'username' => 'required|min:6',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+
         ]);
 
-        return back()->with('success', 'Band successfully updated');
+        $user->update([
+            'username' => request('username'),
+            'email' => request('email'),
+            'password' => Hash::make(request('password')),
+        ]);
 
+        return redirect('admin/user')->with('message', 'Successfully updated data');
+
+    }
+
+    public function destroyUser(User $user){
+        $user->delete();
+        return redirect('admin/user')->with('message', 'Successfully deleted data');
     }
 
 

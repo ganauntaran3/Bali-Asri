@@ -40,7 +40,7 @@
                                 <td>{{ $mail->message }}</td>
                                 <td>{{ $mail->created_at }}</td>
                                 <td class="table-actions">
-                                    <a href="{{ route('mail.delete', $mail->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                                    <a href="{{ route('mail.delete', $mail->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
                                       <i class="fas fa-trash"></i>
                                     </a>
                                   </td>
