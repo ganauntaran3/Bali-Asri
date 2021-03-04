@@ -1,0 +1,71 @@
+@extends('layouts.app')
+
+@section('body')
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-12">
+
+            @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                <span class="alert-text">{{ session('message') }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="mb-0">Admin Roster</h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/user-create') }}">
+                            <span class="btn-inner--icon"><i class="fas fa-plus-square"></i></span>
+                            <span class="btn-inner--text">Add new administrator</span>
+                          </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Light table -->
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush table-striped">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Created at</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $user)
+                            <tr>
+                                <th>{{ $loop->iteration }}</th>
+                                <td>{{ $user->username }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->created_at }}</td>
+                                <td class="table-actions">
+                                    <a href="{{ route('user.edit', $user->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Edit user">
+                                      <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="{{ route('user.delete', $user->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Blog">
+                                      <i class="fas fa-trash"></i>
+                                    </a>
+                                  </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+
