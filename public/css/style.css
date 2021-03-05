@@ -186,9 +186,8 @@ li .active a{
       text-decoration: none;
   }
 
-  *--------------------------------------------------------------
-# Portfolio
---------------------------------------------------------------*/
+/* Portfolio */
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
