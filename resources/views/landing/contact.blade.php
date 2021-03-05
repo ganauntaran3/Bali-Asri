@@ -2,6 +2,10 @@
 
 @section('title', 'Contact Us')
 
+@section('header')
+class="fixed-top no-head"
+@endsection
+
 @section('body')
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact section-bg">
@@ -23,7 +27,7 @@
         <div class="info-box  mb-4">
             <i class="fas fa-envelope"></i>
           <h3>Email Us</h3>
-          <p>contact@example.com</p>
+          <p>baliasri@gmail.com</p>
         </div>
       </div>
 
@@ -31,7 +35,7 @@
         <div class="info-box  mb-4">
             <i class="fas fa-phone-alt"></i>
           <h3>Call Us</h3>
-          <p>+1 5589 55488 55</p>
+          <p>+62 895-246-545-63</p>
         </div>
       </div>
 
@@ -40,7 +44,7 @@
     <div class="row">
 
       <div class="col-lg-6 ">
-        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.747109254997!2d115.19975951538983!3d-8.620260089981496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f254e7fd481%3A0xb7c515dd320b622d!2sGg.%20Taman%20Sari%2C%20Ubung%20Kaja%2C%20Kec.%20Denpasar%20Utara%2C%20Kota%20Denpasar%2C%20Bali%2080115!5e0!3m2!1sid!2sid!4v1614948332952!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
       </div>
 
       <div class="col-lg-6">
@@ -60,12 +64,15 @@
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
           </div>
+
           <div class="my-3">
+            @if (session()->has('message'))
             <div class="loading">Loading</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
+            <div class="sent-message">{{ session('message') }}</div>
+          @endif
           </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div class="text-center"><button type="submit" class="button-buy">Send Message</button></div>
         </form>
       </div>
 

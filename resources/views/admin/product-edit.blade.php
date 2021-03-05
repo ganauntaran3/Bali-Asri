@@ -27,17 +27,17 @@
 
                     <div class="form-group">
                       <label class="form-control-label" for="exampleFormControlInput1">Product Name</label>
-                      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter the product name">
+                      <input type="text" name="name" value="{{ $products->name }}" class="form-control" id="exampleFormControlInput1" placeholder="Enter the product name">
                     </div>
 
                     <div class="form-group">
                       <label class="form-control-label" for="exampleFormControlTextarea1">Description</label>
-                      <textarea class="form-control tinymce-editor" name="desc"  id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <textarea class="form-control tinymce-editor" name="desc"  id="exampleFormControlTextarea1" rows="3">{{ $products->desc }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label class="form-control-label" for="exampleFormControlInput1">Price</label>
-                        <input type="text" name="price" class="form-control" id="exampleFormControlInput1" placeholder="Enter the product price">
+                        <input type="text" name="price" value="{{ $products->price }}" class="form-control" id="exampleFormControlInput1" placeholder="Enter the product price">
                       </div>
 
                     <div class="form-group">

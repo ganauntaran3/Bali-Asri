@@ -4,6 +4,10 @@
     About Us
 @endsection
 
+@section('header')
+class="fixed-top no-head"
+@endsection
+
 @section('body')
 <section id="about" class="about">
     <div class="container">
@@ -70,7 +74,7 @@
             <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
           </div>
           <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="400">
-            <i class="far fa-handshake"></i>
+            <i class="fas fa-project-diagram"></i>
             <h4>Relation</h4>
             <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
           </div>

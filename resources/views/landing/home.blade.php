@@ -4,6 +4,10 @@
     Home Page
 @endsection
 
+@section('header')
+class="fixed-top"
+@endsection
+
 
 
 @section('body')
@@ -29,52 +33,28 @@
 
 <section id="abot" class="abot">
 
-    <div class="container-fluid ml-auto">
+    <div class="container ml-auto">
       <div class="row pb-5 mb-4">
 
           <div class="section-title">
               <h2>Latest Products</h2>
             </div>
 
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <!-- Card-->
-              <div class="card rounded shadow-sm border-0">
-                  <div class="card-body p-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485076/shoes-1_gthops.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
-                      <h5> <a href="#" class="text-dark card-title">Awesome product</a></h5>
-                      <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-              </div>
-          </div>
+            @foreach ($products as $product)
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <!-- Card-->
+                <div class="card rounded shadow-sm border-0">
+                    <div class="card-body p-4"><img src="{{ asset('cover/'.$product->img) }}" alt="" class="img-fluid d-block mx-auto mb-3">
+                        <h5 class="text-dark card-title">{{ $product->name }}</h5>
+                        <p class="small text-muted font-italic">IDR {{ $product->price }}</p>
 
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <!-- Card-->
-              <div class="card rounded shadow-sm border-0">
-                  <div class="card-body p-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485076/shoes-1_gthops.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
-                      <h5> <a href="#" class="text-dark card-title">Awesome product</a></h5>
-                      <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-              </div>
-          </div>
+                        <div class="text-center"><a href="{{ route('product.detail', $product->id) }}"><button type="submit" class="button-buy">Detail</button></a></div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
 
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <!-- Card-->
-              <div class="card rounded shadow-sm border-0">
-                  <div class="card-body p-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485076/shoes-1_gthops.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
-                      <h5> <a href="#" class="text-dark card-title">Awesome product</a></h5>
-                      <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-              </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <!-- Card-->
-              <div class="card rounded shadow-sm border-0">
-                  <div class="card-body p-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556485076/shoes-1_gthops.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
-                      <h5> <a href="#" class="text-dark card-title ">Awesome product</a></h5>
-                      <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-              </div>
-          </div>
 
       </div>
     </div>

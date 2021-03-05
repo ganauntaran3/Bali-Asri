@@ -106,7 +106,7 @@ class AdminController extends Controller
             'img' => $img_name
         ]);
 
-        return redirect('admin/blog')->with('success', 'Successfully Added New Data');
+        return redirect('admin/product')->with('success', 'Successfully Added New Data');
     }
 
     public function updateProduct(Product $product){
@@ -120,7 +120,7 @@ class AdminController extends Controller
 
             File::delete('cover/'.$product->img);
 
-            $img = request()->file('thumbnail');
+            $img = request()->file('img');
             $img_name = time(). "." .$img->getClientOriginalName();
 
             $upDir = 'cover';
@@ -148,6 +148,11 @@ class AdminController extends Controller
         }
 
         return redirect('admin/product')->with('success', 'Data Updated Successfully');
+    }
+
+    public function destroyProduct(Product $product){
+        $product->delete();
+        return redirect('admin/product')->with('message', 'Successfully deleted data');
     }
 
 

@@ -4,11 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mail;
+use App\Models\Product;
 
 class UserController extends Controller
 {
     public function index(){
-        return view('landing.home');
+        $product = Product::latest()->get();
+        return view('landing.home', [
+            'products' => $product
+        ]);
+    }
+
+    public function detailProduct(Product $product){
+        $product = Product::first();
+        return view('landing.product-detail', [
+            'products' => $product
+        ]);
     }
 
     public function product(){
@@ -42,7 +53,9 @@ class UserController extends Controller
             'message' => request('message'),
         ]);
 
-        return back()->with('success', 'Message Successfully Sended!');
+        return back()->with('message', 'Message Successfully Sended!');
 
     }
+
+
 }

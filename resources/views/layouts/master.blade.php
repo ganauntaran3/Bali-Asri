@@ -16,7 +16,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <header id="header" class="fixed-top {{ Request::is('baliasri/contact', 'baliasri/about', 'baliasri/service', 'baliasri/product') ? 'no-head' : '' }}">
+    <header id="header" @yield('header')>
         <div class="container d-flex align-items-center justify-content-between">
           <h1 class="logo"><a href="index.html">Bali Asri</a></h1>
           {{--  <!-- Uncomment below if you prefer to use an image logo -->  --}}
@@ -24,7 +24,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/home') ? 'active' : '' }}" href="{{ url('baliasri/home') }}">Home</a></li>
-              <li><a class="nav-link scrollto {{ Request::is('baliasri/products') ? 'active' : '' }}" href="{{ url('baliasri/product') }}">Products</a></li>
+              <li><a class="nav-link scrollto {{ Request::is('baliasri/product') ? 'active' : '' }}" href="{{ url('baliasri/product') }}">Products</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/service') ? 'active' : '' }}" href="{{ url('baliasri/service') }}">Services</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/about') ? 'active' : '' }}" href="{{ url('baliasri/about') }}">About Us</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/contact') ? 'active' : '' }}" href="{{ url('baliasri/contact') }}">Contact Us</a></li>

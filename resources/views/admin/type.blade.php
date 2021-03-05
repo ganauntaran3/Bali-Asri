@@ -4,6 +4,18 @@
 <div class="container-fluid mt-4">
     <div class="row">
         <div class="col-lg-12">
+
+
+            @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                <span class="alert-text">{{ session('message') }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
