@@ -9,12 +9,12 @@
                 <div class="card-header border-0">
                   <div class="row">
                     <div class="col-6">
-                      <h3 class="mb-0">Blog</h3>
+                      <h3 class="mb-0">Product</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/blog-create') }}">
+                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/product-create') }}">
                             <span class="btn-inner--icon"><i class="fas fa-plus-square"></i></span>
-                            <span class="btn-inner--text">Add Blog</span>
+                            <span class="btn-inner--text">Add New Product</span>
                           </a>
                     </div>
                   </div>
@@ -25,26 +25,32 @@
                     <thead class="thead-light">
                       <tr>
                         <th>#</th>
-                        <th>Thumbnail</th>
-                        <th>Title</th>
-                        <th>Content</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Type</th>
                         <th>Created at</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($blogs as $blog)
+                        @foreach ($products as $product)
                             <tr>
                                 <th>{{ $loop->iteration }}</th>
-                                <td><img src="{{ asset('thumbnail/'. $blog->thumbnail) }}" alt="" style="width: 150px"></td>
-                                <td>{{ $blog->title }}</td>
-                                <td>{!! $blog->paragraph !!}</td>
-                                <td>{{ $blog->created_at }}</td>
+                                <td><img src="{{ asset('cover/'. $product->img) }}" alt="" style="width: 150px"></td>
+                                <td>{{ $product->name }}</td>
+                                <td>{!! $product->desc !!}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->category->category }}</td>
+                                <td>{{ $product->type->type }}</td>
+                                <td>{{ $product->created_at }}</td>
                                 <td class="table-actions">
-                                    <a href="{{ route('blog.edit', $blog->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Edit Blog">
+                                    <a href="{{ route('product.edit', $product->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Edit product">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('blog.delete', $blog->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Blog">
+                                    <a href="{{ route('product.delete', $product->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Product">
                                       <i class="fas fa-trash"></i>
                                     </a>
                                   </td>

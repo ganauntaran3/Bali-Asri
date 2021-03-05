@@ -9,10 +9,13 @@
                 <div class="card-header border-0">
                   <div class="row">
                     <div class="col-6">
-                      <h3 class="mb-0">Email Inbox</h3>
+                      <h3 class="mb-0">Category</h3>
                     </div>
                     <div class="col-6 text-right">
-
+                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/category-create') }}">
+                            <span class="btn-inner--icon"><i class="fas fa-plus-square"></i></span>
+                            <span class="btn-inner--text">Add Category</span>
+                          </a>
                     </div>
                   </div>
                 </div>
@@ -22,31 +25,24 @@
                     <thead class="thead-light">
                       <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>subject</th>
-                        <th>Message</th>
+                        <th>Category</th>
                         <th>Created at</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($mails as $mail)
+                        @foreach ($categories as $category)
                             <tr>
                                 <th>{{ $loop->iteration }}</th>
-                                <td>{{ $mail->name }}</td>
-                                <td>{{ $mail->email }}</td>
-                                <td>{{ $mail->subject }}</td>
-                                <td>{{ $mail->message }}</td>
-                                <td>{{ $mail->created_at }}</td>
+                                <td>{{ $category->category }}</td>
+                                <td>{{ $category->created_at }}</td>
                                 <td class="table-actions">
-                                    <a href="{{ route('mail.delete', $mail->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
-                                      <i class="fas fa-trash"></i>
+                                    <a href="{{ route('category.delete', $category->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Category">
+                                        <i class="fas fa-trash"></i>
                                     </a>
-                                  </td>
+                                </td>
                             </tr>
                         @endforeach
-
                     </tbody>
                   </table>
                 </div>

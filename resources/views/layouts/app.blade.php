@@ -58,6 +58,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link {{ Request::is('admin/category') ? 'active' : '' }}" href="{{ url('admin/category') }}">
+                    <i class="fas fa-folder-open text-info"></i>
+                    <span class="nav-link-text">Categories</span>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link {{ Request::is('admin/mail') ? 'active' : '' }}" href="{{ url('admin/mail') }}">
                     <i class="fas fa-envelope text-red"></i>
                     <span class="nav-link-text">Inbox</span>
@@ -73,6 +79,12 @@
                   <a class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}" href="{{ url('admin/user') }}">
                     <i class="fas fa-user text-warning"></i>
                     <span class="nav-link-text">User</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {{ Request::is('admin/type') ? 'active' : '' }}" href="{{ url('admin/type') }}">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="nav-link-text">Type</span>
                   </a>
                 </li>
               </ul>

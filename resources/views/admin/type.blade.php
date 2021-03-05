@@ -9,10 +9,13 @@
                 <div class="card-header border-0">
                   <div class="row">
                     <div class="col-6">
-                      <h3 class="mb-0">Email Inbox</h3>
+                      <h3 class="mb-0">Product Type</h3>
                     </div>
                     <div class="col-6 text-right">
-
+                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/type-create') }}">
+                            <span class="btn-inner--icon"><i class="fas fa-plus-square"></i></span>
+                            <span class="btn-inner--text">Add Type</span>
+                          </a>
                     </div>
                   </div>
                 </div>
@@ -22,31 +25,24 @@
                     <thead class="thead-light">
                       <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>subject</th>
-                        <th>Message</th>
+                        <th>Type</th>
                         <th>Created at</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($mails as $mail)
+                        @foreach ($types as $type)
                             <tr>
                                 <th>{{ $loop->iteration }}</th>
-                                <td>{{ $mail->name }}</td>
-                                <td>{{ $mail->email }}</td>
-                                <td>{{ $mail->subject }}</td>
-                                <td>{{ $mail->message }}</td>
-                                <td>{{ $mail->created_at }}</td>
+                                <td>{{ $type->type }}</td>
+                                <td>{{ $type->created_at }}</td>
                                 <td class="table-actions">
-                                    <a href="{{ route('mail.delete', $mail->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
-                                      <i class="fas fa-trash"></i>
+                                    <a href="{{ route('type.delete', $type->id) }}" onclick="return hapus('Are You Sure Want to Delete this Data?');" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Category">
+                                        <i class="fas fa-trash"></i>
                                     </a>
-                                  </td>
+                                </td>
                             </tr>
                         @endforeach
-
                     </tbody>
                   </table>
                 </div>
