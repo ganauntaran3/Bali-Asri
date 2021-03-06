@@ -15,7 +15,14 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.dashboard');
+        $product = Product::get()->count();
+        $category = Category::get()->count();
+        $type = Category::get()->count();
+        return view('admin.dashboard', [
+            'products' => $product
+        ]);
+
+
     }
 
     // Mengatur type

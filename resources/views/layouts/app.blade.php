@@ -52,7 +52,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{ Request::is('admin/product') ? 'active' : '' }}" href="{{ url('admin/product') }}">
+                  <a class="nav-link {{ Request::is('admin/product', 'admin/product-create') ? 'active' : '' }}" href="{{ url('admin/product') }}">
                     <i class="fas fa-box-open text-info"></i>
                     <span class="nav-link-text">Products</span>
                   </a>

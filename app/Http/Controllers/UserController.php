@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Mail;
 use App\Models\Product;
@@ -23,7 +24,29 @@ class UserController extends Controller
     }
 
     public function product(){
-        return view('landing.product');
+        $product = Product::latest()->get();
+        $category = Category::get();
+        $productD = Product::where('type_id', '1')->get();
+        $productB = Product::where('type_id', '2')->get();
+        return view('landing.product', [
+            'productD' => $productD,
+            'productB' => $productB,
+            'products' => $product,
+            'categories' => $category
+        ]);
+    }
+
+    public function category(Category $category){
+        $productC = Product::where('category_id', $category->id)->get();
+        $productD = Product::where('type_id', '1')->get();
+        $productB = Product::where('type_id', '2')->get();
+        $category = Category::get();
+        return view('landing.category', [
+            'productC' => $productC,
+            'categories' => $category,
+            'productD' => $productD,
+            'productB' => $productB,
+        ]);
     }
 
     public function service(){

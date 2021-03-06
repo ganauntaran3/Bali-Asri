@@ -46,7 +46,10 @@ class="fixed-top"
                 <div class="card rounded shadow-sm border-0">
                     <div class="card-body p-4"><img src="{{ asset('cover/'.$product->img) }}" alt="" class="img-fluid d-block mx-auto mb-3">
                         <h5 class="text-dark card-title">{{ $product->name }}</h5>
-                        <p class="small text-muted font-italic">IDR {{ $product->price }}</p>
+                        @php
+                        $price = number_format($product->price)
+                        @endphp
+                        <p class="small text-muted font-italic">IDR {{ $price }}</p>
 
                         <div class="text-center"><a href="{{ route('product.detail', $product->id) }}"><button type="submit" class="button-buy">Detail</button></a></div>
                     </div>

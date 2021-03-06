@@ -18,25 +18,42 @@
 <body>
     <header id="header" @yield('header')>
         <div class="container d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a href="index.html">Bali Asri</a></h1>
-          {{--  <!-- Uncomment below if you prefer to use an image logo -->  --}}
+          <h1 class="logo"><a href="{{ url('baliasri/home') }}">Bali Asri</a></h1>
+          <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
           <nav id="navbar" class="navbar">
             <ul>
+              <li><a class="nav-link scrollto {{Request::is('baliasri/home') ? 'active' : ''}}" href="{{ url('baliasri/home') }}">Home</a></li>
+              <li><a class="nav-link scrollto {{Request::is('baliasri/product*') ? 'active' : ''}}" href="{{ url('baliasri/product') }}">Products</a></li>
+              <li><a class="nav-link scrollto {{Request::is('baliasri/service') ? 'active' : ''}}" href="{{ url('baliasri/service') }}">Services</a></li>
+              <li><a class="nav-link scrollto {{Request::is('baliasri/about') ? 'active' : ''}}" href="{{ url('baliasri/about') }}">About us</a></li>
+              <li><a class="nav-link scrollto {{Request::is('baliasri/contact') ? 'active' : ''}}" href="{{ url('baliasri/contact') }}">Contact Us</a></li>
+            </ul>
+            <i class="fas fa-bars " style="color: #fff; font-size: 24px"></i>
+          </nav>
+
+        </div>
+      </header>
+
+
+    {{-- <header id="header" @yield('header')>
+        <div class="container d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="index.html">Bali Asri</a></h1>
+             <nav id="navbar" class="navbar">
+            <ul>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/home') ? 'active' : '' }}" href="{{ url('baliasri/home') }}">Home</a></li>
-              <li><a class="nav-link scrollto {{ Request::is('baliasri/product') ? 'active' : '' }}" href="{{ url('baliasri/product') }}">Products</a></li>
+              <li><a class="nav-link scrollto {{ Request::is('baliasri/product*') ? 'active' : '' }}" href="{{ url('baliasri/product') }}">Products</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/service') ? 'active' : '' }}" href="{{ url('baliasri/service') }}">Services</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/about') ? 'active' : '' }}" href="{{ url('baliasri/about') }}">About Us</a></li>
               <li><a class="nav-link scrollto {{ Request::is('baliasri/contact') ? 'active' : '' }}" href="{{ url('baliasri/contact') }}">Contact Us</a></li>
             </ul>
                 <i class="fas fa-bars mobile-nav-toggle"></i>
           </nav>
-          <!-- .navbar -->
+
+
 
         </div>
-      </header><!-- End Header -->
-
-
+      </header> --}}
 
     {{--  <div class="container card-negative">
         <div class="row rounded-lg ">
@@ -99,9 +116,9 @@
     <div class="footer-top">
       <div class="container">
 
-        <div class="row justify-content-between">
+        <div class="row justify-content-between align-items-center">
 
-          <div class="col-lg-2 col-md-6 footer-links align-self-end">
+          <div class="col-6 col-lg-2 col-md-6 col-sm-6 footer-links align-self-end">
             <h4>Useful Links</h4>
             <ul>
               <li><a href="#">Home</a></li>
@@ -112,7 +129,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact align-self-end text-end pacifico">
+          <div class="col-6 col-lg-3 col-md-6 col-sm-6 footer-contact align-self-end text-end pacifico">
             <h3>Bali Asri</h3>
             <p>
               Denpasar, Bali 80116<br>
@@ -155,9 +172,10 @@
 
 
 </body>
-<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </html>

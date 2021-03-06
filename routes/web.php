@@ -28,6 +28,7 @@ Route::get('/', function () {
         route::get('/home', [UserController::class, 'index']);
         route::get('/product', [UserController::class, 'product']);
         route::get('/product-detail/{product:id}', [UserController::class, 'detailProduct'])->name('product.detail');
+        route::get('/categories/{category:id}', [UserController::class, 'category']);
         route::get('/service', [UserController::class, 'service']);
         route::get('/about', [UserController::class, 'about']);
         route::get('/contact', [UserController::class, 'contact']);

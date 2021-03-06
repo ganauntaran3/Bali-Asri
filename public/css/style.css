@@ -500,7 +500,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -559,14 +559,7 @@ section {
   max-height: 40px;
 }
 
-.mobile-nav-toggle {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: none!important;
-    line-height: 0;
-    transition: 0.5s;
-  }
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -574,6 +567,7 @@ section {
 /**
 * Desktop Navigation
 */
+
 .navbar {
     padding: 0;
   }
@@ -708,14 +702,47 @@ section {
     visibility: visible;
   }
 
+  .fa-bars{
+    display: none !important;
+}
 
+  @media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+    .navbar .dropdown .dropdown:hover > ul {
+      left: -100%;
+    }
+
+
+  }
 
   /**
   * Mobile Navigation
   */
+  .mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+  }
+
+  @media (max-width: 991px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+    .fa-bars{
+        display: block !important;
+    }
+    .navbar ul {
+      display: none;
+    }
+  }
 
   .navbar-mobile {
-    position: fixed;
+    position: fixed !important;
     overflow: hidden;
     top: 0;
     right: 0;
@@ -727,13 +754,13 @@ section {
   }
 
   .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
+    position: absolute !important;
     top: 15px;
     right: 15px;
   }
 
   .navbar-mobile ul {
-    display: block;
+    display: block !important;
     position: absolute;
     top: 55px;
     right: 15px;
@@ -943,7 +970,7 @@ section {
 --------------------------------------------------------------*/
 .testimoni {
     background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("http://127.0.0.1:8000/img/hero-bg.jpg") center center no-repeat;
-    padding: 50px 0 50px 0;
+    /* padding: 50px 0 50px 0; */
   }
 
   .testimoni .counters span {
@@ -973,7 +1000,7 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services{
-    padding: 140px;
+    margin-top: 100px;
 }
 
 .services .icon-box {
@@ -985,7 +1012,6 @@ section {
 
   .services .icon-box .icon {
     margin: 0 auto;
-    width: 100px;
     height: 100px;
     display: flex;
     align-items: center;
