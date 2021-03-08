@@ -17,12 +17,14 @@ class AdminController extends Controller
     public function index(){
         $product = Product::get()->count();
         $category = Category::get()->count();
-        $type = Category::get()->count();
+        $mail = Mail::get()->count();
+        $user = User::get()->count();
         return view('admin.dashboard', [
-            'products' => $product
+            'products' => $product,
+            'categories' => $category,
+            'mails' => $mail,
+            'users' => $user
         ]);
-
-
     }
 
     // Mengatur type

@@ -81,12 +81,6 @@
                     <span class="nav-link-text">User</span>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link {{ Request::is('admin/type') ? 'active' : '' }}" href="{{ url('admin/type') }}">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span class="nav-link-text">Type</span>
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
