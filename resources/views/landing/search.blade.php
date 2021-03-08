@@ -16,21 +16,22 @@ class="fixed-top no-head"
               <div class="section-title">
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
-                          <form action="{{ url('baliasri/search') }}" method="get">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..">
-                                <div class="input-group-append">
-                                    <button class="btn btn-secondary" type="submit">
-                                    <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                        </div>
-                          </form>
+                            <form action="{{ url('baliasri/search') }}" method="get">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="search" placeholder="Search..">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" type="submit">
+                                        <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                            </div>
+                              </form>
                         </div>
                     </div>
               </div>
 
               <div class="row gy-4">
+                <h1>Category </h1>
 
                 @foreach ($categories as $category)
 
@@ -49,6 +50,32 @@ class="fixed-top no-head"
             </div>
           </section><!-- End Services Section -->
 
+          <section id="abot" class="abot">
+
+            <div class="container ml-auto">
+              <div class="row pb-5 mb-4">
+
+                    @foreach ($productS as $productS)
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <!-- Card-->
+                        <div class="card rounded shadow-sm border-0">
+                            <div class="card-body p-4"><img src="{{ asset('cover/'.$productS->img) }}" alt="" class="img-fluid d-block mx-auto mb-3">
+                                <h5 class="text-dark card-title">{{ $productS->name }}</h5>
+                                <p class="small text-muted font-italic">IDR {{ $productS->price }}</p>
+
+                                <div class="text-center"><a href="{{ route('product.detail', $productS->id) }}"><button type="submit" class="button-buy">Detail</button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+
+
+              </div>
+            </div>
+
+          </section>
+
 
           <section id="testimoni" class="testimoni">
             <div class="container">
@@ -64,10 +91,7 @@ class="fixed-top no-head"
                     <div class="card rounded shadow-sm border-0">
                         <div class="card-body p-4"><img src="{{ asset('cover/'.$productD->img) }}" alt="" class="img-fluid d-block mx-auto mb-3">
                             <h5 class="text-dark card-title">{{ $productD->name }}</h5>
-                            @php
-                        $priceD = number_format($productD->price)
-                        @endphp
-                            <p class="small text-muted font-italic">IDR {{ $priceD }}</p>
+                            <p class="small text-muted font-italic">IDR {{ $productD->price }}</p>
 
                             <div class="text-center"><a href="{{ route('product.detail', $productD->id) }}"><button type="submit" class="button-buy">Detail</button></a></div>
                         </div>
@@ -85,6 +109,7 @@ class="fixed-top no-head"
 
               <div class="section-title">
                 <h2>Best Seller</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
 
              <div class="row">
@@ -95,10 +120,7 @@ class="fixed-top no-head"
                     <div class="card rounded shadow-sm border-0">
                         <div class="card-body p-4"><img src="{{ asset('cover/'.$productB->img) }}" alt="" class="img-fluid d-block mx-auto mb-3">
                             <h5 class="text-dark card-title">{{ $productB->name }}</h5>
-                            @php
-                        $priceB = number_format($productB->price)
-                        @endphp
-                            <p class="small text-muted font-italic">IDR {{ $priceB }}</p>
+                            <p class="small text-muted font-italic">IDR {{ $productB->price }}</p>
 
                             <div class="text-center"><a href="{{ route('product.detail', $productB->id) }}"><button type="submit" class="button-buy">Detail</button></a></div>
                         </div>
@@ -111,34 +133,7 @@ class="fixed-top no-head"
           </section>
           <!-- End Pricing Section -->
 
-          <section id="abot" class="abot">
 
-            <div class="container ml-auto">
-              <div class="row pb-5 mb-4">
-
-                    @foreach ($products as $product)
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <!-- Card-->
-                        <div class="card rounded shadow-sm border-0">
-                            <div class="card-body p-4"><img src="{{ asset('cover/'.$product->img) }}" alt="" class="img-fluid d-block mx-auto mb-3">
-                                <h5 class="text-dark card-title">{{ $product->name }}</h5>
-                                @php
-                        $price = number_format($product->price)
-                        @endphp
-                                <p class="small text-muted font-italic">IDR {{ $price }}</p>
-
-                                <div class="text-center"><a href="{{ route('product.detail', $product->id) }}"><button type="submit" class="button-buy">Detail</button></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-
-
-
-              </div>
-            </div>
-
-          </section>
 
 
 

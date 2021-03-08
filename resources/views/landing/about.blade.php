@@ -26,7 +26,6 @@ class="fixed-top no-head"
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.
           </p>
-          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -40,7 +39,6 @@ class="fixed-top no-head"
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.
           </p>
-          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 

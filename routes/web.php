@@ -33,6 +33,7 @@ Route::get('/', function () {
         route::get('/about', [UserController::class, 'about']);
         route::get('/contact', [UserController::class, 'contact']);
         route::post('/post-contact', [UserController::class, 'postContact'])->name('post-contact');
+        route::get('/search', [UserController::class, 'search']);
     });
 
     route::middleware('guest')->group(function () {

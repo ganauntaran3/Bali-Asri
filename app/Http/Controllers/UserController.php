@@ -49,6 +49,21 @@ class UserController extends Controller
         ]);
     }
 
+    public function search(){
+        $search = request()->search;
+        $productS = Product::where('name', 'like', "%".$search."%")->get();
+        $productB = Product::where('type_id', '2')->get();
+        $category = Category::get();
+        $productD = Product::where('type_id', '1')->get();
+
+        return view('landing.search', [
+            'productS' => $productS,
+            'categories' => $category,
+            'productD' => $productD,
+            'productB' => $productB,
+        ]);
+    }
+
     public function service(){
         return view('landing.service');
     }

@@ -120,32 +120,9 @@ class="fixed-top"
             <div class="section-title">
               <h2>How do we works?</h2>
               <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+
+              <div class="text-center mt-5"><a href="{{ 'baliasri/about' }}" class="button-buy">Learn more</a></div>
             </div>
-
-           <div class="row">
-
-                  {{--  galery  --}}
-                  <div class="col-lg-7">
-                      <div class="row">
-                          <div class="col-lg-6">
-                              <div class="col-lg-12">
-                                  {{--  image  --}}
-                              </div>
-                              <div class="col-lg-12">
-                                  {{--  image  --}}
-                              </div>
-                          </div>
-                          <div class="col-lg-6">
-                              {{--  image  --}}
-                          </div>
-                      </div>
-                  </div>
-
-                  {{--  text-gallery  --}}
-                  <div class="col-lg-5">
-
-                  </div>
-           </div>
 
           </div>
         </section>

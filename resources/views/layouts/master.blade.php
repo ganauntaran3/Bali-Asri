@@ -24,7 +24,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto {{Request::is('baliasri/home') ? 'active' : ''}}" href="{{ url('baliasri/home') }}">Home</a></li>
-              <li><a class="nav-link scrollto {{Request::is('baliasri/product*') ? 'active' : ''}}" href="{{ url('baliasri/product') }}">Products</a></li>
+              <li><a class="nav-link scrollto {{Request::is('baliasri/product*', 'baliasri/categories*', 'baliasri/search*') ? 'active' : ''}}" href="{{ url('baliasri/product') }}">Products</a></li>
               <li><a class="nav-link scrollto {{Request::is('baliasri/service') ? 'active' : ''}}" href="{{ url('baliasri/service') }}">Services</a></li>
               <li><a class="nav-link scrollto {{Request::is('baliasri/about') ? 'active' : ''}}" href="{{ url('baliasri/about') }}">About us</a></li>
               <li><a class="nav-link scrollto {{Request::is('baliasri/contact') ? 'active' : ''}}" href="{{ url('baliasri/contact') }}">Contact Us</a></li>
@@ -121,11 +121,11 @@
           <div class="col-6 col-lg-2 col-md-6 col-sm-6 footer-links align-self-end">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="{{ url('baliasri/home') }}">Home</a></li>
+              <li><a href="{{ url('baliasri/product') }}">Products</a></li>
+              <li><a href="{{ url('baliasri/service') }}">Services</a></li>
+              <li><a href="{{ url('baliasri/about') }}">About Us</a></li>
+              <li><a href="{{ url('baliasri/contact') }}">Contact Us</a></li>
             </ul>
           </div>
 
@@ -134,7 +134,7 @@
             <p>
               Denpasar, Bali 80116<br>
               Indonesia<br><br>
-              <strong>Email:</strong> Info@gmail.com<br>
+              <strong>Email:</strong> baliasri@gmail.com<br>
             </p>
         </div>
         </div>
@@ -156,9 +156,9 @@
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="fab fa-whatsapp"></i></a>
+          <a href="www.facebook.com" class="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="www.instagram.com" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/6281999349788?text=Halo%20saya%20ingin%20tahu%20tentang%20toko%20anda" class="google-plus"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
 

@@ -8,7 +8,7 @@
       <meta name="author" content="Creative Tim">
       <title>Bali Asri Administrator</title>
       <!-- Favicon -->
-      <link rel="icon" href="{{ asset('assets/img/brand/favicon.png') }}" type="image/png">
+      <link rel="icon" href="{{ asset('img/Logo (1).png') }}" type="image/png">
       <!-- Fonts -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
       <!-- Icons -->
@@ -27,7 +27,7 @@
           <!-- Brand -->
           <div class="sidenav-header d-flex align-items-center">
             <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
-              <img src="{{ asset('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+              <img src="{{ asset('img/Logo (1).png') }}" class="navbar-brand-img" alt="Bali Asri">
             </a>
             <div class="ml-auto">
               <!-- Sidenav toggler -->
@@ -70,12 +70,6 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{ Request::is('admin/blog') ? 'active' : '' }}" href="{{ url('admin/blog') }}">
-                    <i class="fas fa-pen text-blue"></i>
-                    <span class="nav-link-text">Blog</span>
-                  </a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}" href="{{ url('admin/user') }}">
                     <i class="fas fa-user text-warning"></i>
                     <span class="nav-link-text">User</span>
@@ -94,19 +88,7 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Search form -->
-        <form class="navbar-search navbar-search-dark form-inline mr-sm-3" id="navbar-search-main">
-          <div class="form-group mb-0">
-            <div class="input-group input-group-alternative input-group-merge">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-search"></i></span>
-              </div>
-              <input class="form-control" placeholder="Search" type="text">
-            </div>
-          </div>
-          <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </form>
+
         <!-- Navbar links -->
         <ul class="navbar-nav align-items-center ml-md-auto">
           <li class="nav-item d-xl-none">
@@ -292,25 +274,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
+                <h6 class="text-overflow m-0">Hello!</h6>
               </div>
-              <a href="#!" class="dropdown-item">
-                <i class="ni ni-single-02"></i>
-                <span>My profile</span>
-              </a>
-              <a href="#!" class="dropdown-item">
-                <i class="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
-              </a>
-              <a href="#!" class="dropdown-item">
-                <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
-              </a>
-              <a href="#!" class="dropdown-item">
-                <i class="ni ni-support-16"></i>
-                <span>Support</span>
-              </a>
-              <div class="dropdown-divider"></div>
+
               <a href="{{ route('logout') }}" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
